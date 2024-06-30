@@ -1,0 +1,42 @@
+<div class="container" lang="fr">
+    <!-- <h2 *ngIf="hotels && hotels.length > 0" class="my-1 fw-bold"> {{title}} </h2> -->
+    @if (hotels && hotels.length > 0) {
+        <h2 *ngIf="hotels && hotels.length > 0" class="my-1 fw-bold"> {{title}} </h2>
+    }  
+    
+    <div class="my-2">
+        <div class="row">
+            <div class="col-md-4">
+                <span>Filtre actuel :</span>
+                <strong>{{hotelFilter}}</strong>
+            </div>
+            <div class="col-md-8 form-group">
+                <input title="." type="text" class="form-control" [(ngModel)]="hotelFilter">
+            </div>
+        </div>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-3">
+        <!-- <div *ngFor="let hotel of hotels" class="col mb-4">
+            <div class="card">
+                <img src="{{hotel.imageUrl}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{hotel.hotelName}}</h5>
+                    <p class="card-text">{{hotel.description}}</p>
+                </div>
+            </div>
+        </div> -->
+        @for (hotel of filteredHotels; track $index) {
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{{hotel.imageUrl}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{hotel.hotelName | uppercase }}</h5>
+                        <p class="card-text">{{hotel.description}}</p>
+                        <p class="card-text">{{hotel.price | currency : 'GNF' : 'symbol': '1.2-2' : 'fr' }}</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
