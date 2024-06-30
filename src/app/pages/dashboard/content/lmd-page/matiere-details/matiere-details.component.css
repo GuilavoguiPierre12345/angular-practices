@@ -1,0 +1,19 @@
+.background-section {
+    height: 200px;
+    background-color: aqua;
+}
+
+.image-matiere {
+    height: 150px;
+    width: 150px;
+}
+
+.icon-container {
+    height: 60px;
+    width: 60px;
+}
+
+.image-section {
+    height: 150px;
+    width: 150px;
+}

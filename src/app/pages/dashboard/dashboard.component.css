@@ -1,0 +1,8 @@
+.card:hover {
+    box-shadow: 7px 7px 7px #492E87;
+    transition: all 500ms ease-in-out;
+}
+
+.mat-toolbar {
+    background-color: #492E87;
+}

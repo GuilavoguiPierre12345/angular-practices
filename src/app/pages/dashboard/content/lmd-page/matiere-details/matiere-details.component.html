@@ -1,0 +1,154 @@
+<div class="row">
+    <div class="col-md-4 p-3">
+        <div class="card ">
+            <div class="background-section d-flex justify-content-center align-items-end">
+                <div class="">
+                    <img class="rounded rounded-circle image-matiere" src="favicon.ico" alt="">
+                </div>
+            </div>
+            <div class="my-1 text-center d-flex justify-content-center align-items-center">
+                <h3 class="text-secondary">materiere</h3>
+                <!-- <button title="edit button" class="btn btn-lg">
+                    <i class="mx-2 bi bi-pencil text-primary"></i>
+                </button> -->
+            </div>
+            <div class="text-center my-1">
+                <p>un rappel de notions de maths</p>
+            </div>
+            <div class="row d-flex justify-content-around align-items-center">
+                <div class="col-md-4 p-2 d-flex flex-column align-items-center">
+                    <h3 class="h3 text-secondary">0</h3>
+                    <p class="text-secondary">Fiche</p>
+                </div>
+                <div class="col-md-4 p-2 d-flex flex-column align-items-center">
+                    <h3 class="h3 text-secondary">0</h3>
+                    <p class="text-secondary">Fiche</p>
+                </div>
+                <div class="col-md-4 p-2 d-flex flex-column align-items-center">
+                    <h3 class="h3 text-secondary">0</h3>
+                    <p class="text-secondary">Fiche</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 p-3">
+        <ul class="list-group px-2">
+            <li class="list-group-item my-1">
+                <a [routerLink]="'fiche-cours'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-book"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Fiches de cours</p>
+                </a>
+            </li>
+            <li class="list-group-item my-1">
+                <a [routerLink]="'exercice'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-journals"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Exercices</p>
+                </a>
+            </li>
+            <li class="list-group-item my-1">
+                <a [routerLink]="'calendrier'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-calendar-fill"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Calendar</p>
+                </a>
+            </li>
+            <li class="list-group-item my-1">
+                <a [routerLink]="'evaluation'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-trophy-fill"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Evaluation</p>
+                </a>
+            </li>
+            <li class="list-group-item my-1">
+                <a [routerLink]="'espace-enseignant'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-person-vcard"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Espace enseignant</p>
+                </a>
+            </li>
+            <li class="list-group-item my-1">
+                <a [routerLink]="'plan-de-cours'" class="row d-flex align-items-center text-decoration-none">
+                    <div class="icon-container d-flex justify-content-center align-items-center rounded rounded-circle bg-dark p-3 col-md-2">
+                        <i class="fs-3 text-white bi bi-calendar3-fill"></i>
+                    </div>
+                    <p class="col-md-9 h4 text-secondary">Plan de cours</p>
+                </a>
+            </li>
+           
+          </ul>
+    </div>
+</div>
+<!-- appel du composant de production des cours -->
+<app-production-cours [productionDatas]="productionCoursInformations"></app-production-cours>
+
+<!-- model des fiches de cours -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header p-3 bg-white">Fiche N° 1</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <div class="image-section rounded rounded-circle">
+                    <img class="card-img" src="favicon.ico" alt="photo de la matiere">
+                </div>
+                <div class="">
+                    <a class="btn btn-lg" href="">
+                        <i class="bi bi-pencil fs-2"></i>
+                    </a>
+                </div>
+                <div class="">titre de la fiche</div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-secondary h5 mx-2">Exos 0</p>
+                    <p class="text-secondary h5 mx-2">Traite 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header p-3 bg-white">Fiche N° 1</div>
+            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <div class="image-section rounded rounded-circle">
+                    <img class="card-img" src="favicon.ico" alt="photo de la matiere">
+                </div>
+                <div class="">
+                    <a class="btn btn-lg" href="">
+                        <i class="bi bi-pencil fs-2"></i>
+                    </a>
+                </div>
+                <div class="">titre de la fiche</div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-secondary h5 mx-2">Exos 0</p>
+                    <p class="text-secondary h5 mx-2">Traite 0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- section des fiches telechargeables -->
+<div class="row card my-3">
+    <div class="card-header p-3 bg-white h4 text-secondary">
+        <i class="bi bi-link fs-3 mx-3"></i>
+        Version telechargeable 
+        <i>(19)</i>
+    </div>
+    <div class="card-body row">
+        <div class="col-md-2 m-1 bg-body-tertiary d-flex flex-column justify-content-center align-items-center">
+            <img style="width: 100px; height: 100px;" class="rounded rounded-circle" src="favicon.ico" alt="icon de la fiche">
+            <span class="text-secondary">Type : pdf</span>
+        </div>
+        <div class="col-md-2 m-1 bg-body-tertiary d-flex flex-column justify-content-center align-items-center">
+            <img style="width: 100px; height: 100px;" class="rounded rounded-circle" src="favicon.ico" alt="icon de la fiche">
+            <span class="text-secondary">Type : pdf</span>
+        </div>
+    </div>
+</div>
+
+<!-- appel du composant progression des cours -->
+<app-progression-cours [progressionCours]="progressionCours" ></app-progression-cours>

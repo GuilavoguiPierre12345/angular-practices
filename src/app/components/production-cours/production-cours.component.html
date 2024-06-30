@@ -1,0 +1,16 @@
+<div class="row text-secondary h4">Production des cours</div>
+<div class="row mb-3">
+    @for (prod of productionDatas; track prod) {
+    <div class="col-md-3 p-2">
+        <div class="card rounded rounded-5" style="height: 120px;">
+            <a class="card-body text-decoration-none">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="card-text text-info h3"> {{prod.nombreFiche}} </p>
+                    <mat-icon>{{prod.iconFicheCours}}</mat-icon>
+                </div>
+                <p class="card-text text-info h4">{{prod.typeFicheCours}}</p>
+            </a>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,39 @@
+
+.sidenav-header .sidenav-text{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.hide-header-text {
+    display: none;
+}
+
+.selected-menu-item {
+    border-left: 5px solid rgb(8, 8, 45);
+    background-color: aqua;
+    transition: all 500ms ease;
+}
+
+/* Désactiver l'élévation pour tous les expansion panels */
+mat-expansion-panel {
+    box-shadow: none;
+  }
+  
+  /* Désactiver l'élévation pour le header d'un expansion panel */
+mat-expansion-panel-header {
+    box-shadow: none;
+  }
+mat-expansion-panel-title {
+    box-shadow: none;
+  }
+
+mat-icon {
+    color: white !important;
+    font-size: 38px;
+}
+
+a span {
+    color: white !important;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+}

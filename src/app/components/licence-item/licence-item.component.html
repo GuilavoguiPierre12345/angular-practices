@@ -1,0 +1,33 @@
+<div class="row">
+    @for (departement of departements; track departement) {
+    <div class="col-md-3">
+        <mat-card class="p-2">
+
+            <!-- le header -->
+            <!-- <mat-card-header>
+                    <div mat-card-avatar [style.background-image]="'url(\'favicon.ico\')'"></div>
+                    <mat-card-title>card title</mat-card-title>
+                    <mat-card-subtitle>card subtitle</mat-card-subtitle>
+                </mat-card-header> -->
+            <a [routerLink]="[departement.route,departement.shortcut]" class="text-decoration-none">
+                <img class="w-100" mat-card-image src="favicon.ico" alt="">
+            </a>
+            <mat-card-content class="mt-1">
+                <h4 class="text-secondary fw-bold h3">{{departement.shortcut}}</h4>
+                <div class="d-flex align-items-center">
+                    <h4 class="text-secondary me-2">{{departement.departement}}</h4>
+                </div>
+
+            </mat-card-content>
+            <mat-card-actions class="d-flex justify-content-between align-items-center">
+                <a mat-mini-fab color="primary" title="modifier">
+                    <mat-icon>edit</mat-icon>
+                </a>
+                <a [routerLink]="[departement.route,departement.shortcut]" mat-mini-fab title="voir plus">
+                    <mat-icon>visibility</mat-icon>
+                </a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    }
+</div>

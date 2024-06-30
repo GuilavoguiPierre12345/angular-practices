@@ -1,0 +1,29 @@
+<div class="row d-flex justify-content-between align-items-center">
+    <p class="text-primary h3 col-md-2">{{lmdType}}</p>
+    <div class="col-md-10 text-end">
+        <a color="primary" mat-fab extended>
+            <mat-icon>add_circle_outline</mat-icon>
+            ajouter un departement
+        </a>
+    </div>
+</div>
+<div class="row">
+<!-- appel du composant production-cours -->
+<app-production-cours [productionDatas]="productionCoursInformations" ></app-production-cours>
+</div>
+<div class="row">
+    <!-- appel du composant licence item -->
+    <app-licence-item [departements]="departements"></app-licence-item>
+</div>
+<div class="row">
+    <!-- appel du composant progression cours -->
+    <app-progression-cours [progressionCours]="progressionCours"></app-progression-cours>
+</div>
+<br/><br>
+<div class="row my-2">
+    <app-memoire-publication></app-memoire-publication>
+</div>
+
+
+
+

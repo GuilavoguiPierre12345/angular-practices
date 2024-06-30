@@ -1,0 +1,14 @@
+<div class="row py-4">
+    @for (pub of publicationMemoire; track pub) {
+        <div class="col-md-3">
+            <div class="card p-4 justify-content-center align-items-center">
+                <p class="{{pub.color}} h3">{{pub.title}}</p>
+                <p class="text-primary h2">{{pub.pourcentage}}%</p>
+                <div class="">
+                    <round-progress [radius]="50"[stroke]="5" [current]="pub.pourcentage" [max]="100"/>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    

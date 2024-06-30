@@ -1,0 +1,26 @@
+.content {
+    padding: 20px;
+}
+
+mat-toolbar {
+    position:relative;
+    z-index: 5;
+    background-color: #092635;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 64px);
+
+}
+mat-sidenav {
+    background-color: #1B4242;
+    color: white !important;
+}
+
+mat-sidenav, mat-sidenav-content {
+    transition: all 500ms ease-in-out;
+}
+
+:host * {
+    transition: all 700ms ease-in-out;
+}

@@ -1,0 +1,23 @@
+<app-production-cours [productionDatas]="productionCoursInformations"></app-production-cours>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card p-3">
+            <img class="card-img w-100" src="favicon.ico" alt="">
+            <h3 class="h3 text-secondary">Licence 1 Departement yyyy </h3>
+            <p class="card-text">
+                description de la licence
+            </p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <!-- trimestre description -->
+        <app-trimestre-description></app-trimestre-description>
+    </div>
+</div>
+
+<!-- la liste des matieres par trimestre -->
+<div class="row my-3">
+    <!-- appel du composant de description de la matiere -->
+    <app-matiere-description></app-matiere-description>
+</div>

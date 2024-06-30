@@ -1,0 +1,22 @@
+<div class="row my-4">
+    @for (niveau of niveauPresentation; track niveau) {
+        <div class="col-md-3">
+            <mat-card class="p-2">  
+                <a [routerLink]="[niveau.route,niveau.niveau]">
+                    <img class="w-100" mat-card-image src="favicon.ico" alt="">
+                </a> 
+                <mat-card-content class="mt-1">
+                    <h4 class="text-secondary fw-bold h3">{{niveau.niveau}}</h4>
+                </mat-card-content>
+                <mat-card-actions class="d-flex justify-content-between align-items-center">
+                    <a mat-mini-fab color="primary" title="modifier">
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a [routerLink]="[niveau.route,niveau.niveau]" mat-mini-fab title="voir plus">
+                        <mat-icon>visibility</mat-icon>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    }
+</div>

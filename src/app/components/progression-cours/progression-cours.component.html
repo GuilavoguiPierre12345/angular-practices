@@ -1,0 +1,41 @@
+<div class="row">
+    @for (progression of progressionCours; track progression) {
+        <div class="col-md-3 p-3">
+            <div class="row card card-progress d-flex flex-row align-items-center justify-content-start">
+                <div class="col-md-2">
+                    <i class="fs-1 {{progression.color}} {{progression.icon}}"></i>
+                </div>
+                <div class="col-md-10 d-flex flex-column align-items-center">
+                    <span class="d-block fw-bold">{{progression.nombreDeCours}}</span>
+                    <span class="h3 d-block {{progression.color}}">{{progression.typeProgression}}</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card p-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="px-3 ">
+                <span class="d-block h3">10%</span>
+                <span class="d-block text-secondary h3">Progression (Qte)</span>
+            </div>
+            <div class="">
+                <round-progress [radius]="50"[stroke]="5" [current]="10" [max]="100"/>
+                <!-- <i class="fs-1 bi bi-card-list"></i> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="px-3">
+                <span class="d-block fw-bold h3">10%</span>
+                <span class="d-block text-secondary h3">Progression (hr)</span>
+            </div>
+            <div class="">
+                <round-progress [radius]="50"[stroke]="5" [current]="10" [max]="100"/>
+                <!-- <i class="fs-1 bi bi-card-list"></i> -->
+            </div>
+        </div>
+    </div>
+</div>
