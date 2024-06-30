@@ -1,0 +1,21 @@
+.inner-box {
+    background: #0091ffc0;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 7px;
+    border-bottom: 8px solid red;
+}
+
+.inner-box:hover {
+    background-color: #0091ff64;
+    transition: ease .5s all;
+}
+
+.inner-box>span {
+    font-size: 80px;
+}
+
+.height-50 {
+    height: 150px;
+}
+

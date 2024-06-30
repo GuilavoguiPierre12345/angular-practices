@@ -1,0 +1,160 @@
+<div class="logo">
+    <div nz-flex nzJustify="center" nzAlign="center">
+        <img src="favicon.ico" alt="">
+    </div>
+    @if (!siderCollapsedStatus) {
+        <h1 style="color: beige; padding: 7px;" nz-flex nzJustify="center">FOROGUI PIERRE GUILAVOGUI</h1>
+    }
+</div>
+
+<ul  nz-menu nzMode="inline" nzTheme="dark">
+    @for (item of menuItems(); track item) {
+        
+        @if (item.sousMenu) {
+
+            @if (siderCollapsedStatus) {
+                <li nz-menu-item>
+                    <a [routerLink]="item.route" nz-flex nzAlign="center" href="javascript:void(0);" style="background-color:transparent; border: none;" nzBlock [title]="item.label!" nz-dropdown [nzPlacement]="'bottomCenter'" [nzDropdownMenu]="subItem" type="button"
+                        nz-button nzSize="large">
+                        <span style="font-size: 28px; color: #bdbaba;" nz-icon [nzType]="item.icon!" nzTheme="outline"></span>
+                    </a>
+                </li>
+                
+                <nz-dropdown-menu #subItem="nzDropdownMenu">
+                    <ul nz-menu nzTheme="dark">
+
+                        @for (subItem of item.sousMenu; track subItem) {
+                            @if (subItem.sousMenu) {
+
+                                <li nz-tooltip [nzTooltipTitle]="subItem.label" nzTooltipPlacement="rightBottom" nz-menu-item>
+                                    <a [routerLink]="subItem.route" href="javascript:void(0);"  nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                                        <span class="nav-icon" nz-icon nzTheme="outline" [nzType]="subItem.icon!"></span>
+                                        <span>{{subItem.label}}</span>
+                                    </a>
+                                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                                    <ul nz-menu nzTheme="light">
+
+                                        @for (faculte of subItem.sousMenu; track faculte) {
+                                            <li nz-menu-item>
+                                                <a nz-flex nzAlign="center"  [routerLink]="faculte.route">
+                                                    <span>{{faculte.label}}</span>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                    </nz-dropdown-menu>
+                                </li>
+
+                            } @else {
+
+                                <li nz-tooltip [nzTooltipTitle]="subItem.label" nzTooltipPlacement="rightBottom" nz-menu-item>
+                                    <a [routerLink]="subItem.route" nz-flex nzAlign="center">
+                                        <span class="nav-icon" nz-icon nzTheme="outline" [nzType]="subItem.icon!"></span>
+                                        <span>{{subItem.label}}</span>
+                                    </a>
+                                </li>
+
+                            }
+                            <!-- <li nz-menu-item>
+                                <a nz-flex nzJustify="flex-start" nzAlign="center"  routerLink="">
+                                </a>
+                                <span>{{subItem.label}}</span>
+                            </li> -->
+                        }
+                    </ul>
+                </nz-dropdown-menu>
+
+            } @else {
+
+                <li nz-submenu class="submenu" [nzTitle]="item.label" [nzIcon]="item.icon!">
+                    <ul>
+
+                        @for (subItem of item.sousMenu; track subItem) {
+
+                            @if (subItem.sousMenu) {
+
+                                <li nz-tooltip [nzTooltipTitle]="subItem.label" nzTooltipPlacement="rightBottom" nz-menu-item>
+                                    <a [routerLink]="subItem.route" href="javascript:void(0);"  nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
+                                        <span class="nav-icon" nz-icon nzTheme="outline" [nzType]="subItem.icon!"></span>
+                                        <span>{{subItem.label}}</span>
+                                    </a>
+                                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                                    <ul nz-menu nzTheme="light">
+
+                                        @for (faculte of subItem.sousMenu; track faculte) {
+                                            <li nz-menu-item>
+                                                <a nz-flex nzAlign="center"  [routerLink]="faculte.route">
+                                                    <span>{{faculte.label}}</span>
+                                                </a>
+                                            </li>
+
+                                        }
+                                    </ul>
+                                    </nz-dropdown-menu>
+                                </li>
+
+                            } @else {
+
+                                <li nz-tooltip [nzTooltipTitle]="subItem.label" nzTooltipPlacement="rightBottom" nz-menu-item>
+                                    <a [routerLink]="subItem.route" nz-flex nzAlign="center">
+                                        <span class="nav-icon" nz-icon nzTheme="outline" [nzType]="subItem.icon!"></span>
+                                        <span>{{subItem.label}}</span>
+                                    </a>
+                                </li>
+
+                            }
+                        }
+
+                    </ul>
+                </li>
+
+            }
+            
+        } @else {
+            <!-- les onglets sans sous element -->
+            @if (siderCollapsedStatus) {
+                <li nz-menu-item>
+                    <a nz-flex nzAlign="center"  [routerLink]="item.route">
+                        <span class="nav-icon" nz-icon [nzType]="item.icon!"></span>
+                        <!-- <span>{{item.label}}</span> -->
+                    </a>
+                </li>
+            } @else {
+                <li nz-menu-item>
+                    <a nz-flex nzAlign="center" [routerLink]="item.route">
+                        <span class="nav-icon" nz-icon [nzType]="item.icon!"></span>
+                        <span>{{item.label}}</span>
+                    </a>
+                </li>
+            }
+            
+        }
+    } @empty {
+    <h1>Navigation vide</h1>
+    }
+
+
+
+
+
+    
+    <!-- <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+        <ul>
+            <li nz-menu-item>Option 5</li>
+            <li nz-menu-item>Option 6</li>
+            <li nz-submenu nzTitle="Submenu">
+                <ul>
+                    <li nz-menu-item>Option 7</li>
+                    <li nz-menu-item>Option 8</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li nz-submenu nzTitle="Navigation Three" nzIcon="setting">
+        <ul>
+            <li nz-menu-item>Option 9</li>
+            <li nz-menu-item>Option 10</li>
+            <li nz-menu-item>Option 11</li>
+        </ul>
+    </li> -->
+</ul>

@@ -1,0 +1,19 @@
+/* desactiver les margins et padding de toutes les tags par defaut */
+ul * {
+    padding: 5px !important;
+    margin: 0 !important;
+}
+
+/* mise en forme des icones de la navigatin */
+.nav-icon{
+    font-size: 20px;
+}
+
+.submenu {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    padding: 10px;
+}

@@ -1,0 +1,29 @@
+/* the parent layout */
+.parentLayout {
+    max-height: 100vh;
+}
+
+/* la sidenav */
+.sider {
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.sider::-webkit-scrollbar {
+    outline: none !important;
+    
+}
+
+nz-footer>h4 {
+    text-align: center !important;
+}
+
+/* l'utilisateur connecte */
+ul>li>h3 {
+    padding: 1rem !important;
+}
+
+nz-sider {
+    padding: 0 !important;
+    margin: 0 !important;
+}
