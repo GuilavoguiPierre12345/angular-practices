@@ -1,0 +1,45 @@
+<header class="bg-primaryColor fixed top-0 left-0 w-full z-50 py-5 px-2">
+    <nav class="container relative flex justify-between items-center">
+        <div>
+            <a class="text-2xl uppercase" href="">
+                Bur<span class="font-oswald text-secondaryColor">ger</span>
+            </a>
+        </div>
+        <div [classList]="'absolute top-0 left-0 py-14 w-full bg-primaryColor border-b border-secondaryColor md:block md:static md:py-0 md:border-none md:w-auto md:ml-auto'" [ngClass]="{'hidden': navMenuIsOpen()} ">
+            <ul class="flex flex-col text-center gap-5 md:flex-row">
+                <li>
+                    <a (click)="openNavMenu()" href="#home" class="hover:text-secondaryColor ease-in duration-200">Home</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#about" class="hover:text-secondaryColor ease-in duration-200">About</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#menu" class="hover:text-secondaryColor ease-in duration-200">Menu</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#review" class="hover:text-secondaryColor ease-in duration-200">Review</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#contact" class="hover:text-secondaryColor ease-in duration-200">Contact</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#login" class="hover:text-secondaryColor ease-in duration-200">Login</a>
+                </li>
+                <li>
+                    <a (click)="openNavMenu()" href="#register" class="hover:text-secondaryColor ease-in duration-200">Register</a>
+                </li>
+            </ul>
+            <div (click)="openNavMenu()" class="absolute top-[0.7rem] right-4 text-2xl cursor-pointer md:hidden">
+                <i class="ri-close-line"></i>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-5">
+            <i class="ri-moon-line cursor-pointer ml-4 text-xl"></i>
+
+            <div class="md:hidden" (click)="openNavMenu()" id="hamburger">
+                <i class="ri-menu-2-line cursor-pointer text-xl"></i>
+            </div>
+        </div>
+    </nav>
+</header>
