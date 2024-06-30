@@ -1,0 +1,24 @@
+<div class="row fw-bold navbar border border-1 rounded-4 border-white bg-dark shadow shadow-lg">
+    @for (item of customNavBarItems; track $index) {
+        <div class="col-5">
+            <a [routerLink]="[item.chemin]" class="rounded-4 p-2 text-white d-flex flex-column justify-content-center align-items-center">
+                <i [class]="item.icon"></i>
+                <span class="text-center">{{item.label}}</span>
+            </a>
+        </div>
+    }@empty {
+        <div class="d-flex justify-content-center align-items-center">
+            <p class="fs-4 text-info">Auncun element de la navigation disponible !</p>
+        </div>
+    }
+    
+</div>
+
+<div class="d-flex justify-content-center align-items-center sociaux">
+    <div class="p-3">
+        <i class="bi bi-facebook fs-2"></i>
+    </div>
+    <div class="p-3">
+        <i class="bi bi-linkedin fs-2"></i>
+    </div>
+</div>

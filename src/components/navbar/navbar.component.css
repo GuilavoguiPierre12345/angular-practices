@@ -1,0 +1,19 @@
+.navbar {
+    height: 300px;
+    width: 450px;
+    opacity: .6;
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    background: fixed black;
+    transition: all 0.5 ease;
+}
+
+.sociaux > div{
+    cursor: pointer;
+}

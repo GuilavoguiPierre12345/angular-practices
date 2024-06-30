@@ -1,0 +1,181 @@
+<div class="header">
+    <app-header></app-header>
+</div>
+
+<div class="liste-gerant d-flex justify-content-center align-items-center">
+    <div class="w-100">
+        <div class="d-flex justify-content-between">
+            <div class="">
+                <a [routerLink]="'/'" class="btn btn-lg btn-outline-info"><i class="bi bi-arrow-left"></i> Home page</a>
+            </div>
+            <div class="d-flex justify-content-between align-items-center gap-2">
+                <h3 class="text-center h4 text-white">LISTE DES GERANT D'AGENCE</h3>
+                <button data-bs-target="#exampleModalToggle" data-bs-toggle="modal" class="btn btn-lg btn-outline-info" type="button">
+                    <i class="bi bi-plus-square"> ajouter</i>
+                </button>
+            </div>
+        </div>
+        <input placeholder="Rechercher un client" class="w-50 form-control form-control-lg my-2 rounded rounded-2 bg-transparent text-white" type="text">
+        <div class="liste">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Telephone</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Agence</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider opacity-75 text-center">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>
+
+
+<!-- modal -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header shadow-lg">
+          <h1 class="modal-title text-center fs-5" id="exampleModalToggleLabel">Nouveau gerant</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row p-3" action="" [formGroup]="gerantCompteForm">
+                <div class="col-6 p-2">
+                    <div class="form-floating">
+                        <input formControlName="nom" name="nom" required="true" type="text" class="form-control" id="nom" placeholder="name@example.com">
+                        <label for="nom">nom client</label>
+                    </div>
+                </div>
+                <div class="col-6 p-2">
+                    <div class="form-floating">
+                        <input formControlName="prenom" name="prenom" required="true" type="text" class="form-control" id="prenom" placeholder="name@example.com">
+                        <label for="prenom">prenom client</label>
+                    </div>
+                </div>
+                <div class="col-6 p-2">
+                    <div class="form-floating">
+                        <input formControlName="telephone" name="telephone" required="true" type="tel" class="form-control" id="telephone" placeholder="name@example.com">
+                        <label for="telephone">telephone client</label>
+                    </div>
+                </div>
+
+                <div class="col-6 p-2">
+                    <div class="form-floating">
+                        <select formControlName="genre" name="genre" class="form-select" id="genre" aria-label="Floating label select example">
+                            <option value="M">Masculin</option>
+                            <option value="F">Feminin</option>
+                        </select>
+                        <label for="genre">Genre du client</label>
+                    </div>
+                </div>
+                
+                <div class="col-6 p-2">
+                    <div class="form-floating ">
+                        <select formControlName="agence" name="agence" class="form-select" id="agence" aria-label="Floating label select example">
+                            <option value="">#######</option>
+                        </select>
+                        <label for="agence">Choix agence</label>
+                    </div>
+                </div>
+                <div class="col-6 p-2">
+                    <button class="btn btn-lg btn-outline-info w-100 h-100" type="submit">
+                        <i class="bi bi-plus-square"> VALIDER</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Open first modal</button> -->

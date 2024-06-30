@@ -1,0 +1,200 @@
+<div class="header">
+    <app-header></app-header>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="client-compte d-flex justify-content-center align-items-center">
+            <div class="">
+                <div class="gap-3 d-flex align-items-center my-3">
+                    <a [routerLink]="'/'" class="btn btn-lg btn-outline-info"><i class="bi bi-arrow-left fs-6"></i> Home page</a>
+                    <h5 class="text-center h3 text-white">CREATION DE COMPTE CLIENT</h5>
+                </div>
+                <div class="shadow shadow-lg rounded-4 bg-dark formbox border border-1 border-white">
+                    <form class="row p-3" action="" [formGroup]="clientCompteForm">
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="nom" name="nom" required="true" type="text" class="form-control" id="nom" placeholder="name@example.com">
+                                <label for="nom">nom client</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="prenom" name="prenom" required="true" type="text" class="form-control" id="prenom" placeholder="name@example.com">
+                                <label for="prenom">prenom client</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="telephone" name="telephone" required="true" type="tel" class="form-control" id="telephone" placeholder="name@example.com">
+                                <label for="telephone">telephone client</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="solde" name="solde" required="true" type="number" class="form-control" id="solde" placeholder="name@example.com">
+                                <label for="solde">solde client</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <select formControlName="genre" name="genre" class="form-select" id="genre" aria-label="Floating label select example">
+                                    <option value="M">Masculin</option>
+                                    <option value="F">Feminin</option>
+                                </select>
+                                <label for="genre">Genre du client</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-6 p-2">
+                            <div class="form-floating ">
+                                <select formControlName="agence" name="agence" class="form-select" id="agence" aria-label="Floating label select example">
+                                    <option value="">#######</option>
+                                </select>
+                                <label for="agence">Choix agence</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="form-floating ">
+                                <select formControlName="typec" name="typec" class="form-select" id="typec" aria-label="Floating label select example">
+                                    <option value="CompteE">Compte Epargne</option>
+                                    <option value="CompteP">Compte Payant</option>
+                                </select>
+                                <label for="typec">Type de compte</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <button class="btn btn-lg btn-outline-info w-100 h-100" type="submit">
+                                <i class="bi bi-plus-square"> VALIDER</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="liste-client d-flex justify-content-center align-items-center">
+            <div class="w-100">
+                <h3 class="text-center h3 text-white">LISTE DES CLIENTS</h3>
+                <input placeholder="Rechercher un client" class="form-control form-control-lg my-2 rounded rounded-2 bg-transparent text-white" type="text">
+                <div class="liste">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Prenom</th>
+                                <th scope="col">Telephone</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Agence</th>
+                                <th scope="col">#</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider opacity-75">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td class="d-flex gap-2">
+                                    <button data-bs-target="#modalvirement" data-bs-toggle="modal" title="virement operation" class="btn btn-sm btn-outline-warning" type="button"><i class="bi bi-arrow-bar-up"></i></button>
+                                    <button data-bs-target="#modaltransaction" data-bs-toggle="modal" title="depot ou retrait" class="btn btn-sm btn-outline-info" type="button"><i class="bi bi-translate"></i></button>
+                                    <button data-bs-target="#modaldetailsclient" data-bs-toggle="modal" title="details client" class="btn btn-sm btn-outline-success" type="button"><i class="bi bi-eye"></i></button>
+                                    <button title="modifier client" class="btn btn-sm btn-outline-warning" type="button"><i class="bi bi-pen-fill"></i></button>
+                                    <button data-bs-target="#modaldelclient" data-bs-toggle="modal" title="supprimer client" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-trash"></i></button>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>
+
+
+<!-- modal pour la suppression d'un client -->
+<div class="modal fade" id="modaldelclient" aria-hidden="true" aria-labelledby="modaldelclientLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <p class="fw-bold m-0 text-danger">Voulez-vous supprimer ?</p>
+                <div>
+                    <i  class="bi bi-trash display-1"></i>
+                </div>
+                
+
+                <div class="col-6 p-2">
+                    <button class="btn btn-lg btn-outline-danger w-100 h-100" type="submit">
+                        <i class="bi bi-trash3"> Oui</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal details informations  -->
+<div class="modal fade" id="modaldetailsclient" aria-hidden="true" aria-labelledby="modaldetailsclientLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header shadow-lg">
+            <h1 class="modal-title text-center fs-5" id="modaldetailsclientLabel">Informations client</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            content here...
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal virement  -->
+<div class="modal fade" id="modalvirement" aria-hidden="true" aria-labelledby="modalvirementLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header shadow-lg">
+            <h1 class="modal-title text-center fs-5" id="modalvirementLabel">Effectuer un virement</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="">
+                content here ...
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- modal transaction depot ou retrait  -->
+<div class="modal fade" id="modaltransaction" aria-hidden="true" aria-labelledby="modaltransactionLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header shadow-lg">
+            <h1 class="modal-title text-center fs-5" id="modaltransactionLabel">Depot / Retrait</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="">
+                content here ...
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

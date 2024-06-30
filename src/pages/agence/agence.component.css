@@ -1,0 +1,25 @@
+.client-compte,
+.liste-client {
+    height: 80vh;
+    width: 100%;
+}
+
+.liste {
+    height: 55vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.header {
+    height: 10vh;
+}
+
+.footer {
+    height: 10vh;
+}
+
+.formbox {
+    height: auto;
+    width: auto;
+    opacity: .6;
+}

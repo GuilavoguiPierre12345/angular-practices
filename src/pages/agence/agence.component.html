@@ -1,0 +1,84 @@
+<div class="header">
+    <app-header></app-header>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="client-compte d-flex justify-content-center align-items-center">
+            <div class="">
+                <div class="gap-3 d-flex align-items-center my-3">
+                    <a [routerLink]="'/'" class="btn btn-lg btn-outline-info"><i class="bi bi-arrow-left fs-6"></i> Home page</a>
+                    <h5 class="text-center h3 text-white">NOUVELLE AGENCE</h5>
+                </div>
+                <div class="shadow shadow-lg rounded-4 bg-dark formbox border border-1 border-white">
+                    <form class="row p-3" action="" [formGroup]="agenceForm" (ngSubmit)="submitAgenceForm()">
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="nom" name="nom" required="true" type="text" class="form-control" id="nom" placeholder="name@example.com">
+                                <label for="nom">nom de l'agence</label>
+                            </div>
+                        </div>
+                        <div class="col-6 p-2">
+                            <div class="form-floating">
+                                <input formControlName="adresse" name="adresse" required="true" type="text" class="form-control" id="adresse" placeholder="name@example.com">
+                                <label for="adresse">adresse de l'agence</label>
+                            </div>
+                        </div>
+
+                        <div class="col-auto p-2">
+                            <button class="btn btn-outline-info" type="submit">
+                                <i class="bi bi-plus-square"> VALIDER</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <div class="liste-client d-flex justify-content-center align-items-center">
+            <div class="w-100">
+                <h3 class="text-center h3 text-white">LISTE DES AGENCES</h3>
+                <input placeholder="Rechercher un client" class="form-control form-control-lg my-2 rounded rounded-2 bg-transparent text-white" type="text">
+                <div class="liste">
+                    <table class="table table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Adresse</th>
+                                <th scope="col">#</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider opacity-50">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td><button title="supprimer agence" class="btn btn-sm btn-outline-danger" type="button"><i class="bi bi-trash"></i></button></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>
